@@ -1,6 +1,6 @@
 COVID Data exploration using SQL
 
-```
+```sql
 /* add a new column date with datatype as date (the existing date column has a datatype of varchar) */ 
 SELECT count(*)
 FROM coviddeaths;
