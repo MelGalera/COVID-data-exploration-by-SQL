@@ -54,7 +54,7 @@ FROM infectionRates
 WHERE location = 'World'
 GROUP BY location, population;
 ```
-![](/assets/images/Q1a.png | width=800)
+![](/assets/images/Q1a.png)
 
 <br>
 
@@ -78,7 +78,7 @@ FROM
 GROUP BY continent
 ORDER BY continent_pcnt_pop_infected DESC;
 ```
-<img src="/assets/images/Q1b.png" width= "80%"/>
+![](/assets/images/Q1b.png)
 
 <br>
 
@@ -94,7 +94,7 @@ GROUP BY continent, location
 ORDER BY total_infection_count DESC
 LIMIT 20;
 ```
-<img src="/assets/images/Q1c.png" width= "50%"/>
+![](/assets/images/Q1c.png)
 
 <br>
 
@@ -112,7 +112,7 @@ GROUP BY continent, location, population
 ORDER BY percent_population_infected DESC
 LIMIT 20;
 ```
-<img src="/assets/images/Q1d.png" width= "80%"/>
+![](/assets/images/Q1d.png)
 
 <br>
 <br>
@@ -147,7 +147,7 @@ FROM caseFatalityRates
 WHERE location = 'World'
 GROUP BY location;
 ```
-<img src="/assets/images/Q2a.png" width= "80%"/>
+![](/assets/images/Q2a.png)
 
 <br>
 
@@ -171,7 +171,7 @@ FROM
 GROUP BY continent
 ORDER BY continent_case_fatality_rate DESC;
 ```
-<img src="/assets/images/Q2b.png" width= "80%"/>
+![](/assets/images/Q2b.png)
 
 <br>
 
@@ -187,7 +187,7 @@ GROUP BY continent, location
 ORDER BY total_deaths_count DESC
 LIMIT 20;
 ```
-<img src="/assets/images/Q2c.png" width= "50%"/>
+![](/assets/images/Q2c.png)
 
 <br>
 
@@ -205,7 +205,7 @@ GROUP BY continent, location
 ORDER BY case_fatality_rate DESC
 LIMIT 20;
 ```
-<img src="/assets/images/Q2d.png" width= "80%"/>
+![](/assets/images/Q2d.png)
 
 <br>
 
@@ -220,7 +220,7 @@ FROM caseFatalityRates
 WHERE location = 'World'
 GROUP BY location;
 ```
-<img src="/assets/images/Q2e.png" width= "80%"/>
+![](/assets/images/Q2e.png)
 
 <br>
 
@@ -244,7 +244,7 @@ FROM
 GROUP BY continent
 ORDER BY deaths_per100000popln DESC;
 ```
-<img src="/assets/images/Q2f.png" width= "80%"/>
+![](/assets/images/Q2f.png)
 
 <br>
 
@@ -262,7 +262,7 @@ GROUP BY continent, location
 ORDER BY deaths_per100000popln DESC
 LIMIT 20;
 ```
-<img src="/assets/images/Q2g.png" width= "80%"/>
+![](/assets/images/Q2g.png)
 
 <br>
 <br>
@@ -299,7 +299,7 @@ FROM
 	LIMIT 20)
 ORDER BY reporting_date; 
 ```
-<img src="/assets/images/Q3.png" width= "80%"/>
+![](/assets/images/Q3.png)
 
 <br>
 <br>
@@ -347,7 +347,7 @@ FROM rollingCountVaccinations
 WHERE location = 'World'
 GROUP BY location;
 ```
-<img src="/assets/images/Q4a.png" width= "80%"/>
+![](/assets/images/Q4a.png)
 
 <br>
 
@@ -365,7 +365,7 @@ GROUP BY continent, location
 ORDER BY total_vaccinations DESC
 LIMIT 20;
 ```
-<img src="/assets/images/Q4b.png" width= "80%"/>
+![](/assets/images/Q4b.png)
 
 <br>
 <br>
@@ -402,7 +402,7 @@ FROM vaccinationTable
 WHERE location = 'World'
 GROUP BY location;
 ```
-<img src="/assets/images/Q5a.png" width= "100%"/>
+![](/assets/images/Q5a.png)
 
 <br>
 
@@ -425,7 +425,7 @@ FROM
 GROUP BY continent
 ORDER BY vaccntd_per100000popln DESC;
 ```
-<img src="/assets/images/Q5b.png" width= "80%"/>
+![](/assets/images/Q5b.png)
 
 <br>
 
@@ -448,7 +448,7 @@ FROM
 GROUP BY continent
 ORDER BY fully_vaccntd_per100000popln DESC;
 ```
-<img src="/assets/images/Q5c.png" width= "80%"/>
+![](/assets/images/Q5c.png)
 
 <br>
 
@@ -475,7 +475,7 @@ GROUP BY continent, location
 ORDER BY prcnt_popln_vaccntd_num DESC
 LIMIT 25);
 ```
-<img src="/assets/images/Q5d.png" width= "50%"/>
+![](/assets/images/Q5d.png)
 
 <br>
 
@@ -502,7 +502,7 @@ GROUP BY continent, location
 ORDER BY prcnt_popln_fullyvaccntd_num DESC
 LIMIT 25);
 ```
-<img src="/assets/images/Q5e.png" width= "50%"/>
+![](/assets/images/Q5e.png)
 
 <br>
 <br>
