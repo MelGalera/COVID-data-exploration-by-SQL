@@ -1,13 +1,15 @@
 COVID Data exploration using SQL
+<br>
+<br>
 
 ### PART A. Data preprocessing
 
 ```sql
-/* add a new column date with datatype as date (the existing date column has a datatype of varchar) */ 
+/* check the number of rows (records) in the dataset */ 
 SELECT count(*)
 FROM coviddeaths;
 
-
+/* add a new column date with datatype as date (the existing date column has a datatype of varchar) */ 
 ALTER TABLE coviddeaths RENAME COLUMN "date" TO date_orig;
 ALTER TABLE coviddeaths ADD COLUMN reporting_date date;
 UPDATE coviddeaths SET reporting_date = TO_DATE(date_orig, 'DD/MM/YYYY');
@@ -16,8 +18,12 @@ ALTER TABLE covidvaccinations RENAME COLUMN "date" TO date_orig;
 ALTER TABLE covidvaccinations ADD COLUMN reporting_date date;
 UPDATE covidvaccinations SET reporting_date = TO_DATE(date_orig, 'DD/MM/YYYY');
 ```
+<br>
+<br>
 
 ### PART B. Data exploration: Questions
+
+<br>
 
 **Question 1:** Determine COVID infection rates (Total cases vs population, or the percentage of population that contracted COVID19) worldwide, by country, by continent. Show the highest or top 10. 
 
@@ -35,6 +41,7 @@ SELECT
 FROM coviddeaths
 WHERE total_cases IS NOT NULL;
 ```
+<br>
 
 ```sql
 -- Q1a: Latest worldwide infection rates
@@ -47,6 +54,7 @@ FROM infectionRates
 WHERE location = 'World'
 GROUP BY location, population;
 ```
+<br>
 
 ```sql
 -- Q1b: Latest infection rates by continent (highest to lowest)
@@ -68,6 +76,7 @@ FROM
 GROUP BY continent
 ORDER BY continent_pcnt_pop_infected DESC;
 ```
+<br>
 
 ```sql
 -- Q1c: Top 20 countries/locations with highest number of COVID cases
@@ -81,6 +90,7 @@ GROUP BY continent, location
 ORDER BY total_infection_count DESC
 LIMIT 20;
 ```
+<br>
 
 ```sql
 -- Q1d: Top 20 countries/locations with highest (latest) infection rates 
@@ -96,8 +106,8 @@ GROUP BY continent, location, population
 ORDER BY percent_population_infected DESC
 LIMIT 20;
 ```
-
-
+<br>
+<br>
 
 **Question 2:** Determine COVID case fatality rates (Total deaths vs total cases, or the percentage of deaths in relation to the number of cases) worldwide, by country, by continent. Show the highest or top 10.
 
@@ -116,9 +126,7 @@ SELECT
 FROM coviddeaths
 WHERE total_cases IS NOT NULL;
 ```
-
-SELECT *
-FROM casefatalityrates; 
+<br>
 
 ```sql
 -- Q2a: Latest worldwide case fatality rates for COVID
@@ -131,6 +139,7 @@ FROM caseFatalityRates
 WHERE location = 'World'
 GROUP BY location;
 ```
+<br>
 
 ```sql
 -- Q2b: Latest case fatality rates by continent (highest to lowest)
@@ -152,6 +161,7 @@ FROM
 GROUP BY continent
 ORDER BY continent_case_fatality_rate DESC;
 ```
+<br>
 
 ```sql
 -- Q2c: Top 20 countries/locations with highest number of deaths due to COVID 
@@ -165,6 +175,7 @@ GROUP BY continent, location
 ORDER BY total_deaths_count DESC
 LIMIT 20;
 ```
+<br>
 
 ```sql
 -- Q2d: Top 20 countries/locations with highest (latest) case fatality rates 
@@ -180,6 +191,7 @@ GROUP BY continent, location
 ORDER BY case_fatality_rate DESC
 LIMIT 20;
 ```
+<br>
 
 ```sql
 -- Q2e: Latest worldwide mortality rates for COVID (deaths per 100,0000 population)
@@ -192,6 +204,7 @@ FROM caseFatalityRates
 WHERE location = 'World'
 GROUP BY location;
 ```
+<br>
 
 ```sql
 -- Q2f: Death counts per population  by continent (highest to lowest)
@@ -213,6 +226,7 @@ FROM
 GROUP BY continent
 ORDER BY deaths_per100000popln DESC;
 ```
+<br>
 
 ```sql
 -- Q2g: Top 20 Death counts per population  by country (highest to lowest)
@@ -228,9 +242,12 @@ GROUP BY continent, location
 ORDER BY deaths_per100000popln DESC
 LIMIT 20;
 ```
-
+<br>
+<br>
 
 **Question 3:** Determine the global (world) cases per day. Determine when high percent of new deaths per new cases were recorded globally 
+
+<br>
 
  ```sql
 /* Global cases per day */
@@ -248,6 +265,7 @@ FROM coviddeaths
 WHERE location = 'World' AND new_cases > new_deaths
 GROUP BY reporting_date; 
 ```
+<br>
 
 ```sql
 /* Days with Highest percent of new deaths per new cases recorded globally */
@@ -259,9 +277,12 @@ FROM
 	LIMIT 20)
 ORDER BY reporting_date; 
 ```
-
+<br>
+<br>
 
 **Question 4:** Determine the rolling count of vaccinations. Use new_vaccinations data. 
+
+<br>
 
 ```sql
 CREATE OR REPLACE VIEW rollingCountVaccinations AS
@@ -289,6 +310,7 @@ SELECT *,
 	ROUND(CAST(rolling_num_of_vaccinations AS DECIMAL) / population * 100000, 2) AS total_vaccinations_per100Kpopln
 FROM poplnVaccinated;
 ```
+<br>
 
 ```sql
 -- Q4a: Worldwide number of COVID vaccinations
@@ -301,6 +323,7 @@ FROM rollingCountVaccinations
 WHERE location = 'World'
 GROUP BY location;
 ```
+<br>
 
 ```sql
 -- Q4b: Top 20 countries/locations with highest numbervaccinations 
@@ -316,9 +339,11 @@ GROUP BY continent, location
 ORDER BY total_vaccinations DESC
 LIMIT 20;
 ```
-
+<br>
+<br>
 
 **Question 5:** Determine the vaccination rate or the percentage  of population that has received at least one covid vaccine worldwide, by country, by continent. Show the highest or top 10. 
+<br>
 
 ```sql
 -- create a view for the vaccination rates
@@ -334,10 +359,7 @@ SELECT
 	new_people_vaccinated_smoothed
 FROM covidvaccinations; 
 ```
-
-SELECT *
-FROM vaccinationTable; 
-
+<br>
 
 ```sql
 -- Q5a: Latest worldwide COVID vaccination rate (people vaccinated per 100000 population)
@@ -352,6 +374,7 @@ FROM vaccinationTable
 WHERE location = 'World'
 GROUP BY location;
 ```
+<br>
 
 ```sql
 -- Q5b: Latest vaccinated rates (people vaccinated per 100000 population) by continent (highest to lowest)
@@ -372,6 +395,7 @@ FROM
 GROUP BY continent
 ORDER BY vaccntd_per100000popln DESC;
 ```
+<br>
 
 ```sql
 -- Q5c: Latest fully vaccinated rates (people fully vaccinated per 100000 population) by continent (highest to lowest)
@@ -392,6 +416,7 @@ FROM
 GROUP BY continent
 ORDER BY fully_vaccntd_per100000popln DESC;
 ```
+<br>
 
 ```sql
 -- Q5d: Top 25 with high vaccinated rates (people vaccinated per 100000 population)  by country (highest to lowest)
@@ -416,6 +441,7 @@ GROUP BY continent, location
 ORDER BY prcnt_popln_vaccntd_num DESC
 LIMIT 25);
 ```
+<br>
 
 ```sql
 -- Q5e: Top 25 with high fully vaccinated rates (people fully vaccinated per 100000 population)  by country (highest to lowest)
@@ -438,8 +464,10 @@ FROM vaccinationTable
 WHERE continent <> '' AND people_fully_vaccinated IS NOT NULL
 GROUP BY continent, location
 ORDER BY prcnt_popln_fullyvaccntd_num DESC
-```
-
-
-
 LIMIT 25);
+
+
+<br>
+
+
+```
