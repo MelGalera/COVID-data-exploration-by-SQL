@@ -54,7 +54,7 @@ FROM infectionRates
 WHERE location = 'World'
 GROUP BY location, population;
 ```
-![](/assets/images/Q1a.png)
+<img src="/assets/images/Q1a.png" width= "80%"/>
 
 <br>
 
@@ -94,6 +94,8 @@ GROUP BY continent, location
 ORDER BY total_infection_count DESC
 LIMIT 20;
 ```
+<img src="/assets/images/Q1c.png" width= "50%"/>
+
 ![](/assets/images/Q1c.png)
 
 <br>
