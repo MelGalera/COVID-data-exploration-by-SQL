@@ -54,6 +54,8 @@ FROM infectionRates
 WHERE location = 'World'
 GROUP BY location, population;
 ```
+![](/assets/images/Q1a.png)
+
 <br>
 
 ```sql
@@ -76,6 +78,8 @@ FROM
 GROUP BY continent
 ORDER BY continent_pcnt_pop_infected DESC;
 ```
+![](/assets/images/Q1b.png)
+
 <br>
 
 ```sql
@@ -90,6 +94,8 @@ GROUP BY continent, location
 ORDER BY total_infection_count DESC
 LIMIT 20;
 ```
+![](/assets/images/Q1c.png)
+
 <br>
 
 ```sql
@@ -106,6 +112,8 @@ GROUP BY continent, location, population
 ORDER BY percent_population_infected DESC
 LIMIT 20;
 ```
+![](/assets/images/Q1d.png)
+
 <br>
 <br>
 
@@ -139,6 +147,8 @@ FROM caseFatalityRates
 WHERE location = 'World'
 GROUP BY location;
 ```
+![](/assets/images/Q2a.png)
+
 <br>
 
 ```sql
@@ -161,6 +171,8 @@ FROM
 GROUP BY continent
 ORDER BY continent_case_fatality_rate DESC;
 ```
+![](/assets/images/Q2b.png)
+
 <br>
 
 ```sql
@@ -175,6 +187,8 @@ GROUP BY continent, location
 ORDER BY total_deaths_count DESC
 LIMIT 20;
 ```
+![](/assets/images/Q2c.png)
+
 <br>
 
 ```sql
@@ -191,6 +205,8 @@ GROUP BY continent, location
 ORDER BY case_fatality_rate DESC
 LIMIT 20;
 ```
+![](/assets/images/Q2d.png)
+
 <br>
 
 ```sql
@@ -204,6 +220,8 @@ FROM caseFatalityRates
 WHERE location = 'World'
 GROUP BY location;
 ```
+![](/assets/images/Q2e.png)
+
 <br>
 
 ```sql
@@ -226,6 +244,8 @@ FROM
 GROUP BY continent
 ORDER BY deaths_per100000popln DESC;
 ```
+![](/assets/images/Q2f.png)
+
 <br>
 
 ```sql
@@ -242,6 +262,8 @@ GROUP BY continent, location
 ORDER BY deaths_per100000popln DESC
 LIMIT 20;
 ```
+![](/assets/images/Q2g.png)
+
 <br>
 <br>
 
@@ -277,6 +299,8 @@ FROM
 	LIMIT 20)
 ORDER BY reporting_date; 
 ```
+![](/assets/images/Q3.png)
+
 <br>
 <br>
 
@@ -323,6 +347,8 @@ FROM rollingCountVaccinations
 WHERE location = 'World'
 GROUP BY location;
 ```
+![](/assets/images/Q4a.png)
+
 <br>
 
 ```sql
@@ -339,6 +365,8 @@ GROUP BY continent, location
 ORDER BY total_vaccinations DESC
 LIMIT 20;
 ```
+![](/assets/images/Q4b.png)
+
 <br>
 <br>
 
@@ -374,6 +402,8 @@ FROM vaccinationTable
 WHERE location = 'World'
 GROUP BY location;
 ```
+![](/assets/images/Q5a.png)
+
 <br>
 
 ```sql
@@ -395,6 +425,8 @@ FROM
 GROUP BY continent
 ORDER BY vaccntd_per100000popln DESC;
 ```
+![](/assets/images/Q5b.png)
+
 <br>
 
 ```sql
@@ -416,6 +448,8 @@ FROM
 GROUP BY continent
 ORDER BY fully_vaccntd_per100000popln DESC;
 ```
+![](/assets/images/Q5c.png)
+
 <br>
 
 ```sql
@@ -441,6 +475,8 @@ GROUP BY continent, location
 ORDER BY prcnt_popln_vaccntd_num DESC
 LIMIT 25);
 ```
+![](/assets/images/Q5d.png)
+
 <br>
 
 ```sql
@@ -465,9 +501,17 @@ WHERE continent <> '' AND people_fully_vaccinated IS NOT NULL
 GROUP BY continent, location
 ORDER BY prcnt_popln_fullyvaccntd_num DESC
 LIMIT 25);
+```
+![](/assets/images/Q5e.png)
 
-
+<br>
+<br>
 <br>
 
 
-```
+
+
+
+
+
+
