@@ -54,7 +54,7 @@ FROM infectionRates
 WHERE location = 'World'
 GROUP BY location, population;
 ```
-<img src="/assets/images/Q1a.png" width= "80%"/>
+![](/assets/images/Q1a.png | width=800)
 
 <br>
 
