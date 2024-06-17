@@ -26,6 +26,14 @@ code.highlighter-rouge {
   color: #6f0000;
 }
 
+.highlight {
+  $string: #64763E;
+  $literal: #64763E;
+  $keyword: #6f0000;
+  $operator: #cc7732;
+}
+
+
 .clear-fix {
   overflow: auto;
 }
