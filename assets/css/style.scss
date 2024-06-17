@@ -14,7 +14,7 @@ body {
 }
 
 #main_content code {
-  font-size: 13px;
+  font-size: 14px;
   color: #333333;
 }
 
@@ -22,15 +22,15 @@ section img {
   max-width: 85%
 }
 
-code.highlighter-rouge {
-  color: #6f0000;
-}
-
 .highlight {
   $string: #64763E;
   $literal: #64763E;
   $keyword: #6f0000;
   $operator: #cc7732;
+
+    .k,  .kn,  .kp,  .kr,  .kv {
+    color: #6f0000;
+  }
 }
 
 
