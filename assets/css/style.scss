@@ -15,10 +15,15 @@ body {
 
 #main_content code {
   font-size: 13px;
+  color: #333333;
 }
 
 section img {
   max-width: 85%
+}
+
+code.highlighter-rouge {
+  color: #6f0000;
 }
 
 .clear-fix {
