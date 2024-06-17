@@ -73,8 +73,7 @@ FROM
 		MAX(total_cases) AS total_infection_count
 	FROM infectionRates 
 	WHERE continent <> '' 
-	GROUP BY continent, location, population
-	ORDER BY continent)
+	GROUP BY continent, location, population)
 GROUP BY continent
 ORDER BY continent_pcnt_pop_infected DESC;
 ```
@@ -166,8 +165,7 @@ FROM
 		MAX(total_deaths) AS total_deaths_count
 	FROM caseFatalityRates 
 	WHERE continent <> '' 
-	GROUP BY continent, location
-	ORDER BY continent)
+	GROUP BY continent, location)
 GROUP BY continent
 ORDER BY continent_case_fatality_rate DESC;
 ```
@@ -239,8 +237,7 @@ FROM
 		MAX(total_deaths) AS total_deaths_count
 	FROM caseFatalityRates 
 	WHERE continent <> '' 
-	GROUP BY continent, location
-	ORDER BY continent)
+	GROUP BY continent, location)
 GROUP BY continent
 ORDER BY deaths_per100000popln DESC;
 ```
