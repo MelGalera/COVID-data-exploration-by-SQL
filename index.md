@@ -1,4 +1,4 @@
-<img src="assets/images/covid_exploration2.jpg" style="width:100%;"/>
+<img id = "covid_banner" src="assets/images/covid_exploration2.jpg"/>
 <br>
 <br>
 
