@@ -1,4 +1,4 @@
-<img src="assets/images/covid_exploration1.jpg" style="width:100%;text-align:center;"/>
+<img src="assets/images/covid_exploration2.jpg" style="width:100%;"/>
 <br>
 <br>
 
