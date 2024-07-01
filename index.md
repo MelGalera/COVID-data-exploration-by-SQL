@@ -1,4 +1,4 @@
-COVID Data exploration using SQL
+<img src="assets/images/covid_exploration.jpg" style="width:100%;"/>
 <br>
 <br>
 
