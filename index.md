@@ -1,4 +1,4 @@
-<img src="assets/images/covid_exploration1.jpg" style="width:800px;"/>
+
 <br>
 <br>
 
