@@ -1,4 +1,4 @@
-<img src="assets/images/covid_exploration.jpg" style="width:100%;"/>
+<img src="assets/images/covid_exploration1.jpg" style="width:100%;"/>
 <br>
 <br>
 
