@@ -5,17 +5,17 @@
 #### Overview
 
 The goal of this project is to analyze the COVID-19 deaths and vaccinations dataset to derive valuable insights and trends that can help understand the impact of COVID-19 virus globally. 
-<br>
+<br><br>
 
 #### Data Collection
 
-The dataset was sourced from [Our World in Data](https://ourworldindata.org/covid-deaths) (see complete attribution at the end) with date range from 05 January 2020 to 26 May 2024. The downloaded dataset was split into 2 files: (1) coviddeaths; and (2) covidvaccinations. Both were in csv files.
-<br>
+The dataset was sourced from [Our World in Data](https://ourworldindata.org/covid-deaths) (*see complete attribution at the end*) with date range from 05 January 2020 to 26 May 2024. The downloaded dataset was split into 2 files: *(1) coviddeaths*; and *(2) covidvaccinations*. Both were in csv files.
+<br><br>
 
 #### Importing Data 
 
 This project was carried out using DBeaver connected to PostgreSQL database which was used to import the data and perform SQL queries. 
-<br> 
+<br><br> 
 
 #### Data preprocessing
 
@@ -111,7 +111,7 @@ GROUP BY continent, location
 ORDER BY total_infection_count DESC
 LIMIT 20;
 ```
-![](/assets/images/Q1c.png){: width:"70%"}
+<img id = "table_1" src="assets/images/Q1c.png"/>
 
 <br>
 
@@ -203,7 +203,7 @@ GROUP BY continent, location
 ORDER BY total_deaths_count DESC
 LIMIT 20;
 ```
-![](/assets/images/Q2c.png){: width:"70%"}
+<img id = "table_1" src="assets/images/Q2c.png"/>
 
 <br>
 
@@ -417,7 +417,7 @@ FROM vaccinationTable
 WHERE location = 'World'
 GROUP BY location;
 ```
-![](/assets/images/Q5a.png)
+<img id = "table_2" src="assets/images/Q5a.png"/>
 
 <br>
 
@@ -490,7 +490,7 @@ GROUP BY continent, location
 ORDER BY prcnt_popln_vaccntd_num DESC
 LIMIT 25);
 ```
-![](/assets/images/Q5d.png){: width:"70%"}
+<img id = "table_1" src="assets/images/Q5d.png"/>
 
 <br>
 
@@ -517,7 +517,7 @@ GROUP BY continent, location
 ORDER BY prcnt_popln_fullyvaccntd_num DESC
 LIMIT 25);
 ```
-![](/assets/images/Q5e.png){: width:"70%"}
+<img id = "table_1" src="assets/images/Q5e.png"/>
 
 <br>
 
@@ -529,7 +529,7 @@ The views generated from the queries above were exported as csv files for visual
 <br>
 ##### Data source attribution:
 
-Edouard Mathieu, Hannah Ritchie, Lucas Rodés-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina and Max Roser (2020) - "Coronavirus Pandemic (COVID-19)". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]
+*Edouard Mathieu, Hannah Ritchie, Lucas Rodés-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina and Max Roser (2020) - "Coronavirus Pandemic (COVID-19)". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]*
 
 <br>
 <br>
