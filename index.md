@@ -2,7 +2,24 @@
 <br>
 <br>
 
-### PART A. Data preprocessing
+#### Overview
+
+The goal of this project is to analyze the COVID-19 deaths and vaccinations dataset to derive valuable insights and trends that can help understand the impact of COVID-19 virus globally. 
+<br>
+
+#### Data Collection
+
+The dataset was sourced from [Our World in Data](https://ourworldindata.org/covid-deaths) (see complete attribution at the end) with date range from 05 January 2020 to 26 May 2024. The downloaded dataset was split into 2 files: (1) coviddeaths; and (2) covidvaccinations. Both were in csv files.
+<br>
+
+#### Importing Data 
+
+This project was carried out using DBeaver connected to PostgreSQL database which was used to import the data and perform SQL queries. 
+<br> 
+
+#### Data preprocessing
+
+Before exploring the data, the following were done.
 
 ```sql
 /* check the number of rows (records) in the dataset */ 
@@ -21,11 +38,12 @@ UPDATE covidvaccinations SET reporting_date = TO_DATE(date_orig, 'DD/MM/YYYY');
 <br>
 <br>
 
-### PART B. Data exploration: Questions
+####  Data exploration (Questions)
 
+SQL queries were used to answer questions to give insights on the impact of COVID-19 globally.
 <br>
 
-**Question 1:** Determine COVID infection rates (Total cases vs population, or the percentage of population that contracted COVID19) worldwide, by country, by continent. Show the highest or top 10. 
+**Question 1:** Determine COVID infection rates (Total cases vs population, or the percentage of population that contracted COVID19) worldwide, by country, by region/continent. Show the highest or top 10. 
 
 ```sql
 -- create a view for the infection rates
@@ -59,7 +77,7 @@ GROUP BY location, population;
 <br>
 
 ```sql
--- Q1b: Latest infection rates by continent (highest to lowest)
+-- Q1b: Latest infection rates by region/continent (highest to lowest)
 SELECT 
 	continent,
 	sum(population) AS continent_population,
@@ -93,7 +111,7 @@ GROUP BY continent, location
 ORDER BY total_infection_count DESC
 LIMIT 20;
 ```
-![](/assets/images/Q1c.png)
+![](/assets/images/Q1c.png){: width:"70%"}
 
 <br>
 
@@ -116,7 +134,7 @@ LIMIT 20;
 <br>
 <br>
 
-**Question 2:** Determine COVID case fatality rates (Total deaths vs total cases, or the percentage of deaths in relation to the number of cases) worldwide, by country, by continent. Show the highest or top 10.
+**Question 2:** Determine COVID case fatality rates (Total deaths vs total cases, or the percentage of deaths in relation to the number of cases) worldwide, by country, by region/continent. Show the highest or top 10.
 
 ```sql
 -- create a view for the infection rates
@@ -151,7 +169,7 @@ GROUP BY location;
 <br>
 
 ```sql
--- Q2b: Latest case fatality rates by continent (highest to lowest)
+-- Q2b: Latest case fatality rates by region/continent (highest to lowest)
 SELECT 
 	continent,
 	sum(total_cases_count) AS continent_total_cases,
@@ -185,7 +203,7 @@ GROUP BY continent, location
 ORDER BY total_deaths_count DESC
 LIMIT 20;
 ```
-![](/assets/images/Q2c.png)
+![](/assets/images/Q2c.png){: width:"70%"}
 
 <br>
 
@@ -223,7 +241,7 @@ GROUP BY location;
 <br>
 
 ```sql
--- Q2f: Death counts per population  by continent (highest to lowest)
+-- Q2f: Death counts per population  by region/continent (highest to lowest)
 SELECT 
 	continent,
 	sum(loc_population) AS continent_total_population,
@@ -367,7 +385,7 @@ LIMIT 20;
 <br>
 <br>
 
-**Question 5:** Determine the vaccination rate or the percentage  of population that has received at least one covid vaccine worldwide, by country, by continent. Show the highest or top 10. 
+**Question 5:** Determine the vaccination rate or the percentage  of population that has received at least one covid vaccine worldwide, by country, by region/continent. Show the highest or top 10. 
 <br>
 
 ```sql
@@ -404,7 +422,7 @@ GROUP BY location;
 <br>
 
 ```sql
--- Q5b: Latest vaccinated rates (people vaccinated per 100000 population) by continent (highest to lowest)
+-- Q5b: Latest vaccinated rates (people vaccinated per 100000 population) by region/continent (highest to lowest)
 SELECT 
 	continent,
 	sum(population) AS cont_population,
@@ -427,7 +445,7 @@ ORDER BY vaccntd_per100000popln DESC;
 <br>
 
 ```sql
--- Q5c: Latest fully vaccinated rates (people fully vaccinated per 100000 population) by continent (highest to lowest)
+-- Q5c: Latest fully vaccinated rates (people fully vaccinated per 100000 population) by region/continent (highest to lowest)
 SELECT 
 	continent,
 	sum(population) AS cont_population,
@@ -472,7 +490,7 @@ GROUP BY continent, location
 ORDER BY prcnt_popln_vaccntd_num DESC
 LIMIT 25);
 ```
-![](/assets/images/Q5d.png)
+![](/assets/images/Q5d.png){: width:"70%"}
 
 <br>
 
@@ -499,8 +517,21 @@ GROUP BY continent, location
 ORDER BY prcnt_popln_fullyvaccntd_num DESC
 LIMIT 25);
 ```
-![](/assets/images/Q5e.png)
+![](/assets/images/Q5e.png){: width:"70%"}
 
+<br>
+
+#### Visualization
+
+The views generated from the queries above were exported as csv files for visualization using Tableau. This can be viewed [here](https://public.tableau.com/views/Covid_deaths_17194860048630/Dashboard1?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link). 
+
+<br>
+<br>
+##### Data source attribution:
+
+Edouard Mathieu, Hannah Ritchie, Lucas Rodés-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina and Max Roser (2020) - "Coronavirus Pandemic (COVID-19)". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]
+
+<br>
 <br>
 <br>
 <br>
