@@ -9,7 +9,7 @@ The goal of this project is to analyze the COVID-19 deaths and vaccinations data
 
 #### Data Collection
 
-The dataset was sourced from [Our World in Data](https://ourworldindata.org/covid-deaths) (*see complete attribution at the end*) with date range from 05 January 2020 to 26 May 2024. The downloaded dataset was split into 2 files: *(1) coviddeaths*; and *(2) covidvaccinations*. Both were in csv files.
+The dataset was sourced from [Our World in Data](https://ourworldindata.org/covid-deaths){:target="_blank"} (*see complete attribution at the end*) with date range from 05 January 2020 to 26 May 2024. The downloaded dataset was split into 2 files: *(1) coviddeaths*; and *(2) covidvaccinations*. Both were in csv files.
 <br><br>
 
 #### Importing Data 
@@ -523,7 +523,7 @@ LIMIT 25);
 
 #### Visualization
 
-The views generated from the queries above were exported as csv files for visualization using Tableau. This can be viewed [here](https://public.tableau.com/views/Covid_deaths_17194860048630/Dashboard1?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link). 
+The views generated from the queries above were exported as csv files for visualization using Tableau. This can be viewed [here](https://public.tableau.com/views/Covid_deaths_17194860048630/Dashboard1?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link){:target="_blank"}. 
 
 <br>
 <br>
