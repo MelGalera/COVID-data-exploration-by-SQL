@@ -36,7 +36,7 @@ ALTER TABLE covidvaccinations ADD COLUMN reporting_date date;
 UPDATE covidvaccinations SET reporting_date = TO_DATE(date_orig, 'DD/MM/YYYY');
 ```
 <br>
-<br>
+
 
 ####  Data exploration (Questions)
 
